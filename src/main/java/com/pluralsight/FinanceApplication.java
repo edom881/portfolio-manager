@@ -1,20 +1,20 @@
+
 package com.pluralsight;
 
+import com.pluralsight.finance.Portfolio;
 import com.pluralsight.finance.BankAccount;
 import com.pluralsight.finance.Gold;
-import com.pluralsight.finance.House;
 import com.pluralsight.finance.Jewelry;
-import com.pluralsight.finance.Valuable;
-
-
+import com.pluralsight.finance.House;
 
 public class FinanceApplication {
 
     public static void main(String[] args) {
 
 
+        Portfolio portfolio = new Portfolio("Retirement Portfolio", "Pam");
+
         BankAccount account1 = new BankAccount(123, "Pam", 12500);
-        Valuable account2 = new BankAccount(456, "Gary", 1500);
 
         Gold gold = new Gold(2.5);
 
@@ -22,17 +22,17 @@ public class FinanceApplication {
 
         House house = new House("Family House", 2000, 350000);
 
+        portfolio.add(account1);
+        portfolio.add(gold);
+        portfolio.add(ring);
+        portfolio.add(house);
 
-        account1.deposit(100);
+        System.out.println("Total Portfolio Value: $" + portfolio.getValue());
 
-        System.out.println("Account 1 value: $" + account1.getValue());
+        System.out.println("Most Valuable Asset: $" +
+                portfolio.getMostValuable().getValue());
 
-        System.out.println("Account 2 value: $" + account2.getValue());
+        System.out.println("Least Valuable Asset: $" +
+                portfolio.getLeastValuable().getValue());
+    }  }
 
-        System.out.println("Gold value: $" + gold.getValue());
-
-        System.out.println("Jewelry value: $" + ring.getValue());
-
-        System.out.println("House value: $" + house.getValue());
-    }
-}
