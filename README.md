@@ -18,3 +18,4 @@ This Java application demonstrates object-oriented programming concepts using fi
 - Constructors
 - Packages
 - Polymorphism
+- Collections (ArrayList)
